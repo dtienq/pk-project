@@ -1,0 +1,184 @@
+﻿body 
+{
+	
+	font-family:Times New Roman ;
+	
+margin: 0px 0px 0px 0px;
+	
+	font-size:11pt;
+	background-color:Red;
+	
+	background-repeat:no-repeat;
+	background-position:top;
+
+	background-attachment:fixed;
+	
+}
+#Sidebar
+{
+	font-family:Times New Roman ;
+	text-align:justify;
+	line-height:22px;
+	margin: 2px 0px 0px 02px;
+	padding-left:03px;
+
+	float:left;
+	width:214px;
+	border:double 1px Silver;
+	padding-right:2px;
+}
+#Sidebar1
+{
+	font-family:Times New Roman;
+	text-align:justify;
+	line-height:22px;
+	margin: 2px 0px 0px 2px;
+	border:double 1px Silver;
+	padding-right:2px;
+	padding-left:2px;
+	float:left;
+	width:650px;
+	height:100%;
+}
+#Sidebar2
+{
+	font-family:Times New Roman ;
+	text-align:justify;
+	line-height:22px;
+	margin: 2px 0px 0px 2px;
+	border:double 1px Silver;
+	padding-right:2px;
+	padding-left:2px;
+	float:left;
+	width:250px;
+}
+#Container
+{
+width: 955px;
+margin: 0px auto;
+background:white;
+border-color:#0591c1;
+
+}
+#Content
+{
+	margin: 0px 0px 0px 2px;
+	border:double 1px Silver;
+float:left;
+width: 943px;
+
+	text-align: center;
+}
+#RSidebar
+{
+	margin: 0px 0px 0px 0px;
+	
+	padding-right:2px;
+	padding-left:2px;
+	padding-bottom:2px;
+	float:left;
+	width:200px;
+	
+}
+#RSidebar1
+{
+	margin: 0px 0px 0px 0px;
+	
+	padding-right:2px;
+	padding-left:2px;
+	padding-bottom:2px;
+	float:left;
+	width:673px;
+	text-align: left;
+	height: 394px;
+}
+#Header
+{
+	background-image: url('../images/Hearderogm.png'); 
+height:135px;
+}
+#Menu
+{
+	background-image: url('../Images/PKDK_Banner_v3.png'); 
+height:36px;
+}
+#Footer
+{
+	background-image: url('../images/footerogm.png'); 
+	background-repeat:no-repeat;
+	
+height:30px;
+}
+.h
+{
+	margin: 0px 0px 0px 0px;
+	color:#16642e;
+	text-align:center;
+	
+background-color:#c7eafd;
+	
+}
+.lh
+{
+	color:#33CCFF;
+	background-color:#16642e;
+	
+}
+.lh:hover
+{
+	
+	color:Red;
+	background-color:#16642e;
+	
+	
+}
+.h:hover
+{
+	color:#16642e;
+}
+td
+{
+	padding-left:3px;
+	padding-right:2px;
+	padding-top:1px;
+	padding-bottom:1px;
+	text-align:justify;
+
+}
+.let
+{
+	
+	
+	padding-left:04px;
+	padding-right:03px;
+	padding-top:1px;
+	padding-bottom:1px;
+	
+	width:100%;
+
+}
+#foo1
+{
+	float:left;
+	width:170px;
+}
+.rig
+{
+	padding-left:04px;
+	padding-right:03px;
+	padding-top:3px;
+	padding-bottom:3px;
+	text-align:center;
+}
+.bro
+{
+	margin: 2px 0px 0px 0px;
+	border:double 1px Silver;
+	padding-right:2px;
+}
+.bronull
+{
+	margin: 2px 0px 0px 0px;
+	
+	padding-right:2px;
+}

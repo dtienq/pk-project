@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)https://www.ilabmedical.com/ViewResultBS.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="SHORTCUT ICON" href="https://www.ilabmedical.com/images/md.ico">
+ <script type="text/javascript" src="./kqxn_files/jquery-1.4.2.min.js.download"></script>
+    <link href="./kqxn_files/jquery.autocomplete.css" rel="stylesheet" type="text/css"><link href="./kqxn_files/StyleSheet.css" rel="stylesheet" type="text/css">
+    <script language="javascript" src="./kqxn_files/lich_vn.js.download" type="text/javascript"></script></head><body style="background :gray"><div onclick="bShow=true" id="calendar" style="z-index:+999;position:absolute;visibility:hidden;"><table width="220" style="font-family:arial;font-size:10px;border-width:1px;border-style:solid;border-color:#a0a0a0;font-family:arial; font-size:10px}" bgcolor="#ffffff"><tbody><tr bgcolor="#0000aa"><td><table width="218"><tbody><tr><td style="padding:0px;font-family:arial; font-size:10px;"><font color="#ffffff"><b><span id="caption"><span id="spanLeft" style="border-style:solid;border-width:1px;border-color:#3366FF;cursor:pointer" onmouseover="swapImage(&quot;changeLeft&quot;,&quot;left2.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;window.status=&quot;Nhấn vào đây để xem tháng trước. Giữ chuột để cuộn tự động.&quot;" onclick="javascript:decMonth()" onmouseout="clearInterval(intervalID1);swapImage(&quot;changeLeft&quot;,&quot;left1.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;window.status=&quot;&quot;" onmousedown="clearTimeout(timeoutID1);timeoutID1=setTimeout(&quot;StartDecMonth()&quot;,500)" onmouseup="clearTimeout(timeoutID1);clearInterval(intervalID1)">&nbsp;<img id="changeLeft" src="./kqxn_files/left1.gif" width="10" height="11" border="0">&nbsp;</span>&nbsp;<span id="spanRight" style="border-style:solid;border-width:1px;border-color:#3366FF;cursor:pointer" onmouseover="swapImage(&quot;changeRight&quot;,&quot;right2.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;window.status=&quot;Nhấn vào đây để xem tháng sau. Giữ chuột để cuộn tự động.&quot;" onmouseout="clearInterval(intervalID1);swapImage(&quot;changeRight&quot;,&quot;right1.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;window.status=&quot;&quot;" onclick="incMonth()" onmousedown="clearTimeout(timeoutID1);timeoutID1=setTimeout(&quot;StartIncMonth()&quot;,500)" onmouseup="clearTimeout(timeoutID1);clearInterval(intervalID1)">&nbsp;<img id="changeRight" src="./kqxn_files/right1.gif" width="10" height="11" border="0">&nbsp;</span>&nbsp;<span id="spanMonth" style="border-style:solid;border-width:1px;border-color:#3366FF;cursor:pointer" onmouseover="swapImage(&quot;changeMonth&quot;,&quot;drop2.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;window.status=&quot;Chọn tháng.&quot;" onmouseout="swapImage(&quot;changeMonth&quot;,&quot;drop1.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;window.status=&quot;&quot;" onclick="popUpMonth()"></span>&nbsp;<span id="spanYear" style="border-style:solid;border-width:1px;border-color:#3366FF;cursor:pointer" onmouseover="swapImage(&quot;changeYear&quot;,&quot;drop2.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;window.status=&quot;Chọn năm.&quot;" onmouseout="swapImage(&quot;changeYear&quot;,&quot;drop1.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;window.status=&quot;&quot;" onclick="popUpYear()"></span>&nbsp;</span></b></font></td><td align="right"><a href="javascript:hideCalendar()"><img src="./kqxn_files/close.gif" width="15" height="13" border="0" alt="Close the Calendar"></a></td></tr></tbody></table></td></tr><tr><td style="padding:0px" bgcolor="#ffffff"><span id="content"></span></td></tr><tr bgcolor="#f0f0f0"><td style="padding:0px" align="center"><span id="lblToday">Thứ <a onmousemove="window.status=&quot;Đến tháng hiện tại&quot;" onmouseout="window.status=&quot;&quot;" title="Đến tháng hiện tại" style="text-decoration:none;color:black;" href="javascript:monthSelected=monthNow;yearSelected=yearNow;constructCalendar();">Bảy Ngày 24 Tháng năm năm 2025</a></span></td></tr></tbody></table></div><div id="selectMonth" style="z-index:+999;position:absolute;visibility:hidden;"></div><div id="selectYear" style="z-index:+999;position:absolute;visibility:hidden;"></div>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+
+
+// ]]>
+</script>
+<meta name="google-site-verification" content="s28UzOw67rZTSNqhx5xfMVgDvEZHQsi_4SH3GHtHq5I"><meta name="robots" content="INDEX,FOLLOW"><meta http-equiv="REFRESH" content="3600"><title>
+	TRA KET QUA XET NGHIEM
+</title><meta name="DESCRIPTION" content="XÉT NGHIỆM Y KHOA ILAB"><meta name="KEYWORDS" content="XÉT NGHIỆM Y KHOA ILAB">
+
+<form name="aspnetForm" method="post" action="https://www.ilabmedical.com/ViewResultBS.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="506C3653">
+</div>
+
+ 
+  <div id="Container" style="border-top-width: 1px; background-color:White; border-left-width: 1px; border-left-color: #abf59b; border-bottom-width: 1px; border-bottom-color: #abf59b; border-top-color: #abf59b; border-right-width: 1px; border-right-color: #abf59b;">
+
+<div id="Header">
+
+</div>
+<div>
+    
+
+<style type="text/css">
+    .style1
+    {
+        width: 21px;
+    }
+    .style2
+    {
+        width: 16px;
+    }
+</style>
+
+<table id="Table1" border="0" cellpadding="0" cellspacing="0" style="border-style: none; background-image: url(&#39;rs/barcream24.jpg&#39;); width: 100%; height: 36px;" width="100%">
+    <tbody><tr>
+    
+         
+        <td style="text-align: center; border-right: 1px double rgb(255, 255, 255); background-color: rgb(4, 193, 243);" bgcolor="#04C1F3" class="style2" nowrap="nowrap" onmouseout="this.style.backgroundColor=&#39;#04C1F3&#39;;  this.setAttribute(&#39;className&#39;,&#39;rangeoutstyle2&#39;);" onmouseover="this.style.backgroundColor=&#39;#c42d17&#39;; this.setAttribute(&#39;className&#39;,&#39;rangeoverstyle&#39;);" classname="rangeoutstyle2">
+           <a href="https://www.ilabmedical.com/Default.aspx" style="color: white; background-color: transparent;text-decoration:none; font-family:Arial; font-weight: 700;">Trang chủ</a></td>
+                
+           <td style="text-align:center;border-right: #ffffff 1px double;" bgcolor="#04C1F3" class="style1" colspan="1" nowrap="nowrap" onmouseout="this.style.backgroundColor=&#39;#04C1F3&#39;; this.setAttribute(&#39;className&#39;,&#39;rangeoutstyle2&#39;);" onmouseover="this.style.backgroundColor=&#39;#c42d17&#39;; this.setAttribute(&#39;className&#39;,&#39;rangeoverstyle&#39;);" rowspan="1">
+            <a href="https://www.ilabmedical.com/Dichvu.aspx" style="color: white; background-color: transparent;text-decoration:none;font-family:Arial; font-weight: 700;">Dịch vụ</a></td>
+        <td style="text-align:center;width:160px; border-right: #ffffff 1px double;" bgcolor="#04C1F3" class="rangeoutstyle2" colspan="1" nowrap="nowrap" onmouseout="this.style.backgroundColor=&#39;#04C1F3&#39;;this.setAttribute(&#39;className&#39;,&#39;rangeoutstyle2&#39;);" onmouseover="this.style.backgroundColor=&#39;#c42d17&#39;;  this.setAttribute(&#39;className&#39;,&#39;rangeoverstyle&#39;);" rowspan="1">
+            <a href="https://www.ilabmedical.com/Huongdanbn.aspx" style="color: white; background-color: transparent;text-decoration:none;font-family:Arial; font-weight: 700;">Hướng dẫn xem kết quả theo bệnh nhân</a></td>
+            
+
+            
+        <td style="text-align:center;width:140px; border-right: #ffffff 1px double;" bgcolor="#04C1F3" class="rangeoutstyle2" colspan="1" nowrap="nowrap" onmouseout="this.style.backgroundColor=&#39;#04C1F3&#39;; this.setAttribute(&#39;className&#39;,&#39;rangeoutstyle2&#39;);" onmouseover="this.style.backgroundColor=&#39;#c42d17&#39;; this.setAttribute(&#39;className&#39;,&#39;rangeoverstyle&#39;);" rowspan="1">
+            <a href="https://www.ilabmedical.com/Huongdandonvi.aspxs" style="color: white; background-color: transparent;text-decoration:none;font-family:Arial; font-weight: 700;">Hướng dẫn xem kết quả theo đơn vi</a></td>
+            
+         
+            
+      
+          
+        	
+        	<td bgcolor="#04C1F3" style="color:White; text-align:right ; width:120px;font-family:Arial">Thứ Bảy , 24 - 5 - 2025  05:02</td>
+        <!--
+	
+			-->
+        
+        
+        <!--
+		<TD noWrap bgColor="#fdfcf5">&nbsp;<a href="tiepnhan_danhsach.aspx">Danh sách tiếp nhận</a>
+			&nbsp;&nbsp;
+		</TD>
+		<TD noWrap bgColor="#fdfcf5">&nbsp;<a href="tiepnhan_thongke.aspx">Thống kê</a>&nbsp;&nbsp;</TD>
+		-->
+    </tr>
+</tbody></table>
+
+
+</div>
+      
+ <div id="Content">
+ 
+
+    <script language="javascript" src="./kqxn_files/csspopup.js.download" type="text/javascript"></script>
+<script language="javascript" src="./kqxn_files/lich_vn.js.download" type="text/javascript"></script><div onclick="bShow=true" id="calendar" style="z-index:+999;position:absolute;visibility:hidden;"><table width="220" style="font-family:arial;font-size:10px;border-width:1px;border-style:solid;border-color:#a0a0a0;font-family:arial; font-size:10px}" bgcolor="#ffffff"><tbody><tr bgcolor="#0000aa"><td><table width="218"><tbody><tr><td style="padding:0px;font-family:arial; font-size:10px;"><font color="#ffffff"><b><span id="caption"></span></b></font></td><td align="right"><a href="javascript:hideCalendar()"><img src="./kqxn_files/close.gif" width="15" height="13" border="0" alt="Close the Calendar"></a></td></tr></tbody></table></td></tr><tr><td style="padding:0px" bgcolor="#ffffff"><span id="content"></span></td></tr><tr bgcolor="#f0f0f0"><td style="padding:0px" align="center"><span id="lblToday"></span></td></tr></tbody></table></div><div id="selectMonth" style="z-index:+999;position:absolute;visibility:hidden;"></div><div id="selectYear" style="z-index:+999;position:absolute;visibility:hidden;"></div>
+<script language="javascript" type="text/javascript">
+function keypress(e){
+//Hàm dùng để ngăn người dùng nhập các ký tự khác ký tự số vào TextBox
+    var keypressed = null;
+    if (window.event)
+    {
+    keypressed = window.event.keyCode; //IE
+    }
+    else
+    { 
+    keypressed = e.which; //NON-IE, Standard
+    }
+
+    if (keypressed < 48 || keypressed > 57)
+    { //CharCode của 0 là 48 (Theo bảng mã ASCII)
+    //CharCode của 9 là 57 (Theo bảng mã ASCII)
+    if (keypressed == 8 || keypressed == 127 || keypressed == 13 ||keypressed == 45)
+    {//Phím Delete và Phím Back
+    return;
+    }
+
+    return false;
+    }
+    
+
+}
+</script>
+<div onload="popup(&#39;popUpDiv&#39;);" style="text-align: left">
+<h3 class="h" style="text-align: center">XEM KẾT QUẢ XÉT NGHIỆM </h3>
+<table padding-left:10px"="" cellpadding="0" border="0" cellspacing="0" style="width: 99%" width="100%">
+    <tbody><tr>
+        <td>
+        <table>
+        <tbody><tr>
+        
+         <td>
+        <span id="ctl00_Contentplaceholder2_Label1" style="display:inline-block;width:100px;">Từ ngày:</span>
+        </td>
+        <td>
+          <input name="ctl00$Contentplaceholder2$txtNgay" type="text" value="22/05/2025" id="ctl00_Contentplaceholder2_txtNgay" onfocus="this.style.backgroundColor=&#39;#ccffff&#39;;popUpCalendar(this, this, &#39;dd/mm/yyyy&#39;);" style="width:130px;">
+        </td>
+        <td>
+        <span id="ctl00_Contentplaceholder2_Label2" style="display:inline-block;width:100px;">đến ngày:</span>
+        </td>
+        <td>
+          <input name="ctl00$Contentplaceholder2$txtDenngay" type="text" value="24/05/2025" id="ctl00_Contentplaceholder2_txtDenngay" onfocus="this.style.backgroundColor=&#39;#ccffff&#39;;popUpCalendar(this, this, &#39;dd/mm/yyyy&#39;);" style="width:130px;">
+        </td>
+        <td>
+         </td><td>
+         <input type="submit" name="ctl00$Contentplaceholder2$btnXem" value="Xem" id="ctl00_Contentplaceholder2_btnXem" style="width:69px;">
+        </td>
+        <td>
+         <span id="ctl00_Contentplaceholder2_lblTenBS" style="display:inline-block;height:16px;width:207px;color: #CC0000; font-weight: 700">Test SGN</span>
+        </td>
+           <td>
+               <strong>
+               <input type="submit" name="ctl00$Contentplaceholder2$btnThaydoimatkhau" value="Thay đổi mật khẩu" id="ctl00_Contentplaceholder2_btnThaydoimatkhau" style="color:Blue;width:125px;">
+               </strong>
+        </td>
+        </tr>
+        
+        </tbody></table>
+           </td>
+    </tr>
+        </tbody></table><table width="100%">
+<tbody><tr>
+<td>
+    <span id="ctl00_Contentplaceholder2_Label10" style="font-weight: 700">I. Thông tin bệnh nhân</span>
+</td>
+</tr>
+<tr>
+<td>
+    <span id="ctl00_Contentplaceholder2_lblTongBN" style="font-weight: 700; color: #CC0000;">Tổng số bệnh nhân: 13</span>
+</td>
+</tr>
+<tr>
+<td>
+    <div>
+	<table cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_Contentplaceholder2_dgvThuTien" style="background-color:White;border-color:#3366CC;border-width:1px;border-style:Double;font-size:Small;font-weight:bold;width:100%;border-collapse:collapse;">
+		<tbody><tr style="color:White;background-color:#0033CC;font-weight:bold;">
+			<th scope="col">Xem KQ</th><th scope="col">In KQ</th><th scope="col">Ngày XN</th><th scope="col">Mã SID</th><th scope="col">Họ tên</th><th scope="col">Tuổi</th><th scope="col">KQPAP</th><th scope="col">KQTSan</th>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$0&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$0&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5219</td><td>PHẠM TRẦN ANH NGUYÊN</td><td>2002</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$1&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$1&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5220</td><td>MAI NGUYỄN BẢO KHANG</td><td>1997</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$2&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$2&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5221</td><td>PHẠM THỊ ĐẸP</td><td>2000</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$3&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$3&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5222</td><td>LÝ TRUNG TRỰC</td><td>1988</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$4&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$4&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5223</td><td>LƯU TÔ HÀ</td><td>1970</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$5&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$5&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5224</td><td>NGUYỄN THANH XUYÊN</td><td>1987</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$6&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$6&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5225</td><td>TRẦN THANH PHONG</td><td>1992</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$7&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$7&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5226</td><td>NGUYỄN PHƯỚC LỘC</td><td>1993</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$8&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$8&#39;)" style="color:Black;">IN</a></td><td>22/05/2025</td><td>220525-5227</td><td>DƯƠNG THÁI SƠN</td><td>1996</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$9&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$9&#39;)" style="color:Black;">IN</a></td><td>23/05/2025</td><td>230525-5527</td><td>TRẦN QUANG TUYẾN</td><td>1989</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$10&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$10&#39;)" style="color:Black;">IN</a></td><td>23/05/2025</td><td>230525-5528</td><td>PHAN THÀNH KÔNG</td><td>1999</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$11&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$11&#39;)" style="color:Black;">IN</a></td><td>23/05/2025</td><td>230525-5529</td><td>PHẠM TRỌNG HIỆP</td><td>2001</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr><tr style="color:Black;background-color:White;">
+			<td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Select$12&#39;)" style="color:Black;">Xem KQ</a></td><td><a href="javascript:__doPostBack(&#39;ctl00$Contentplaceholder2$dgvThuTien&#39;,&#39;Delete$12&#39;)" style="color:Black;">IN</a></td><td>23/05/2025</td><td>230525-5530</td><td>NGÔ ĐỨC ANH</td><td>2002</td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td><td>
+                <a href="https://www.ilabmedical.com/ViewResultBS.aspx"></a>
+                   
+                </td>
+		</tr>
+	</tbody></table>
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+</tbody></table>
+    
+    
+        
+           
+            <span id="ctl00_Contentplaceholder2_Label8" style="display:inline-block;font-weight:bold;font-style:italic;width:287px;">   II. Chi tiết kết quả xét nghiệm</span>
+    
+
+
+<div style=" padding-left:10px">
+    <table id="ctl00_Contentplaceholder2_tablexn" cellspacing="0" cellpadding="2" align="Center" rules="all" border="1" style="border-color:Black;border-width:1px;border-style:Groove;font-family:Times New Roman;font-size:12pt;width:100%;border-collapse:collapse;">
+	<tbody><tr>
+		<td align="center" style="color:Blue;font-weight:bold;height:30px;width:200px;">Tên xét nghiệm</td><td align="center" style="color:Blue;font-weight:bold;height:30px;width:100px;">Kết quả</td><td align="center" valign="middle" style="color:Blue;font-weight:bold;width:100px;">Đơn vị</td><td align="center" style="color:Blue;font-weight:bold;height:30px;width:130px;">CSBT</td>
+	</tr>
+</tbody></table>
+    <span id="ctl00_Contentplaceholder2_Label9" style="font-family:Times New Roman;font-size:12pt;font-weight:bold;">Nhận xét:</span>
+    <span id="ctl00_Contentplaceholder2_lb_nhaxet" style="display:inline-block;font-family:Times New Roman;font-size:12pt;font-weight:normal;width:464px;"></span><br>
+        </div>
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+        <tbody><tr>
+            <td style="width: 100px">
+                </td>
+            <td style="width: 100px">
+                </td>
+            <td colspan="2">
+                </td>
+            <td style="width: 100px">
+                </td>
+        </tr>
+        <tr>
+            <td style="width: 100px">
+    <span id="ctl00_Contentplaceholder2_lblstt" style="font-family:Times New Roman;font-size:12pt;font-weight:bold;"></span>
+                </td>
+            <td style="width: 100px">
+                </td>
+            <td colspan="2">
+                </td>
+            <td style="width: 100px">
+            </td>
+        </tr>
+    </tbody></table>
+     <div style="text-align:right">
+     <a style="color:Blue;text-decoration:none;" href="https://www.ilabmedical.com/ViewResultBS.aspx#" onclick="history.go(-1)">[Trở về]</a>
+    </div>
+    </div>
+
+
+       
+  </div>
+     
+    <div style="clear:both"></div>
+    
+   
+
+ <div style="clear:both"></div>
+  <div id="Footer">
+  <table>
+  <tbody><tr>
+  <td style="width: 200px">
+ 
+     
+  </td>
+  <td style="width: 640px">
+   <br>
+  </td>
+  </tr>
+
+  </tbody></table>
+     
+  </div>
+  </div>
+   
+    
+   </form>
+
+
+</body></html>
