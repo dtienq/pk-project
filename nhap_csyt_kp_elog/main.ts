@@ -10,8 +10,13 @@ import { SaveDieuTriRequestDto } from "./SaveDieuTriRequestDto";
 import { writeLog } from "./slog";
 const converter = require('json-2-csv');
 
-const bearerToken =
-    `Bearer 2uw6OYU9GwjyhxrTCoptdHvIANW58O9GrkqQ1HPzdCXUJKdFQlz4hCHhQl8QqXfyTDZcVDHjEJYucgA5rygKNzc9tSFTrqQ7S9veKnSW0m37OmKOmROe9EmCFlASmSXiUjx1zuVRR+qhMtG9UANQnnrW2PmCYSFopwIhvr7nnpbx9Hvtw12QKJoNkEmtN2tVAiFq2p4WOEcXOsfZQb2nZv3kbOef5GsQOsf0Csyv2RQkUxvIzKHOMw==`;
+const bearerToken = process.env.TOKEN;
+
+console.log("Bearer token:", bearerToken);
+if(!bearerToken || !bearerToken.startsWith('Bearer ')) {
+    console.error("Bearer token is not set or invalid. Please set the TOKEN environment variable.");
+    process.exit(1);
+}
 
 const httpsAgent = new https.Agent({
     rejectUnauthorized: false
@@ -45,29 +50,33 @@ danhSachKhachHang.forEach((kh: CustomerDto) => {
             },
             httpsAgent
         }).then(res => {
-            var ThongTinKhachHangList: ThongTinKhachHangDto[] = res.data.Data.Data;
+            if (res.data.CodeName == 'SUCCESS') {
+                var ThongTinKhachHangList: ThongTinKhachHangDto[] = res.data.Data.Data;
 
-            ThongTinKhachHangList = ThongTinKhachHangList
-                .filter(t => t.Hoten?.toLowerCase() == kh.fullName?.toLowerCase()
-                            && t.Namsinh == kh.yearOfBirth);
+                ThongTinKhachHangList = ThongTinKhachHangList
+                    .filter(t => t.Hoten?.toLowerCase() == kh.fullName?.toLowerCase()
+                        && t.Namsinh == kh.yearOfBirth);
 
-            if (ThongTinKhachHangList.length == 0) {
-                writeLog(`Không tìm thấy khách hàng ${kh.fullName} - ${kh.yearOfBirth}`);
-                return;
+                if (ThongTinKhachHangList.length == 0) {
+                    writeLog(`Không tìm thấy khách hàng ${kh.fullName} - ${kh.yearOfBirth}`);
+                    return;
+                }
+
+                // Lấy dto có Ma_XNSL 4 ký tự cuối lớn nhất
+                const maxDtoObj = ThongTinKhachHangList
+                    .filter(t => t.Ma_XNSL && t.Ma_XNSL.length >= 4)
+                    .map(t => ({
+                        dto: t,
+                        last4: parseInt(t.Ma_XNSL?.slice(-4) || '0', 10)
+                    }))
+                    .reduce<{ dto: ThongTinKhachHangDto | null; last4: number }>((max, curr) => (curr.last4 > max.last4 ? curr : max), { dto: null, last4: -1 });
+
+                const dto = maxDtoObj.dto;
+
+                AddTiepDon(dto, kh);
+            } else {
+                writeLog(`Lỗi khi tìm kiếm thông tin khách hàng ${kh.fullName} - ${kh.yearOfBirth}: ${JSON.stringify(res.data)}`);
             }
-
-            // Lấy dto có Ma_XNSL 4 ký tự cuối lớn nhất
-            const maxDtoObj = ThongTinKhachHangList
-                .filter(t => t.Ma_XNSL && t.Ma_XNSL.length >= 4)
-                .map(t => ({
-                    dto: t,
-                    last4: parseInt(t.Ma_XNSL?.slice(-4) || '0', 10)
-                }))
-                .reduce<{ dto: ThongTinKhachHangDto | null; last4: number }>((max, curr) => (curr.last4 > max.last4 ? curr : max), { dto: null, last4: -1 });
-
-            const dto = maxDtoObj.dto;
-
-            AddTiepDon(dto, kh);
         }).catch(err => {
             writeLog(`Lỗi khi tìm kiếm thông tin khách hàng ${kh.fullName} - ${kh.yearOfBirth}: ${err.message}`);
         });
@@ -146,9 +155,9 @@ function AddTiepDon(dto: ThongTinKhachHangDto | null, khInput: CustomerDto) {
         Ma_nv_cd: '',
         Da_xn: false,
         Ma_da: 7, // Example value, replace with actual
-        Stt: khInput?.maTiepDon || '', // Example value, replace with actual
+        Stt: khInput.maXnHiv?.slice(-4) || '', // Example value, replace with actual
         Ma_congdong: '',
-        Ma_XNSL: `CĐ-HCM-29-0${khInput?.maTiepDon || ''}`, // Default value if not provided
+        Ma_XNSL: `CĐ-HCM-29-0${khInput.maXnHiv?.slice(-4) || ''}`, // Default value if not provided
         Noi_gt: [4],
         Da_tc: false,
         Nguon_kinh_phi: 7,
@@ -196,7 +205,7 @@ function SaveXetNghiemKD(tiepDonId: number, khInput: CustomerDto, khachHangId?: 
         Tiepdon_id: tiepDonId,
         Khachhang_id: khachHangId, // Default to 0 if not provided
         Ma_cs: 524, // Default value if not provided
-        Ma_khangdinh: `CĐ-HCM-29-0${khInput.maTiepDon}`, // Example value, replace with actual
+        Ma_khangdinh: `CĐ-HCM-29-0${khInput.maXnHiv?.slice(-4)}`, // Example value, replace with actual
         Hinhthuc_xn: 2, // Default value if not provided
         KQ_Sangloc: 1, // Default value if not provided
         NSP_Sangloc: 7, // Default value if not provided

@@ -1,0 +1,1 @@
+Script này nếu như trường hợp tái khám chạy bằng script tái khám vẫn chưa hoàn thành thì chạy.

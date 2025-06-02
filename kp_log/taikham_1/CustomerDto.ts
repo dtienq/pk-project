@@ -4,5 +4,5 @@ export class CustomerDto {
     sex?: string;
     ngayTd?: string;
     maPrep?: string;
-    maXnHiv?: string;
+    maXnHiv: string = '';
 }
